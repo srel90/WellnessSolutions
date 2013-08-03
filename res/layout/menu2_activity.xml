@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/tab2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BMI Value"
+            android:id="@+id/bmivalue" android:layout_gravity="left|center_vertical" android:textColor="#ffff99"
+            android:textSize="20dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BMI Result"
+            android:id="@+id/bmiresult" android:layout_gravity="left|center_vertical" android:textColor="#ffff99"
+            android:textSize="20dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weight Standard1"
+            android:id="@+id/ws1" android:textColor="#ffff99" android:textSize="20dp"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Weight Standard2"
+              android:id="@+id/ws2" android:textColor="#ffff99" android:textSize="18dp"/>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView" android:src="@drawable/kcal" android:layout_gravity="center"
+            android:paddingTop="5dp"/>
+</LinearLayout>
