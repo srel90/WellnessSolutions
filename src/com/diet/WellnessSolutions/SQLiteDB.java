@@ -2,11 +2,19 @@ package com.diet.WellnessSolutions;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.res.AssetManager;
+import android.content.res.Resources;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Date;
 
 /**
@@ -21,18 +29,16 @@ public class SQLiteDB extends SQLiteOpenHelper {
     private static final String TABLE_TRANSECTION = "transection";
     private static final String TABLE_RECIPE = "recipe";
     private static final int DATABASE_VERSION = 1;
+    private Context mCtx;
 
     public SQLiteDB(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        mCtx=context;
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_TRANSECTION +
-                "(ID INTEGER PRIMARY KEY AUTOINCREMENT," +
-                " kcal VARCHAR(255)," +
-                " datetime VARCHAR(255));");
-        Log.d("CREATE TABLE","Create Table Successfully.");
+
     }
     public long insertTransectionData(double kcal) {
         try {
@@ -181,4 +187,63 @@ public class SQLiteDB extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_TRANSECTION);
         onCreate(sqLiteDatabase);
     }
+    public void createDataBase(){
+        boolean dbExist = checkDataBase();
+        //boolean dbExist = false;
+        if (dbExist) {
+            // do nothing - database already exist
+            Log.i("databaseex","already have");
+        } else {
+            Log.i("databaseex","don have");
+            //this.getReadableDatabase();
+            try {
+                copyDataBase();
+            } catch (IOException e) {
+                throw new Error("Error copying database");
+            }
+        }
+
+    }
+
+    // this method will check the existance of database
+    private boolean checkDataBase() {
+        SQLiteDatabase checkDB = null;
+        String myPath = "data/data/com.diet.WellnessSolutions/databases/WellnessSolutions";
+        try {
+            checkDB = SQLiteDatabase.openDatabase(myPath, null,SQLiteDatabase.OPEN_READONLY);
+        } catch (Exception e) {
+
+        }
+
+        if (checkDB != null) {
+            checkDB.close();
+        }
+
+        return checkDB != null ? true : false;
+    }
+
+    // copy the database file from asset folder to the DDMS database folder
+    private void copyDataBase() throws IOException {
+        // Open your local db as the input stream
+        AssetManager assetManager = mCtx.getAssets();
+        InputStream myInput = assetManager.open("WellnessSolutions");
+
+        // Path to the just created empty db
+        String outFileName = "data/data/com.diet.WellnessSolutions/databases/WellnessSolutions";
+
+        // Open the empty db as the output stream
+        OutputStream myOutput = new FileOutputStream(outFileName);
+
+        // transfer bytes from the inputfile to the outputfile
+        byte[] buffer = new byte[1024];
+        int length;
+        while ((length = myInput.read(buffer)) > 0) {
+            myOutput.write(buffer, 0, length);
+        }
+        // Close the streams
+        myOutput.flush();
+        myOutput.close();
+        myInput.close();
+    }
+
 }

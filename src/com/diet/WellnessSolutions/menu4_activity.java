@@ -23,6 +23,7 @@ public class menu4_activity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu4_activity);
         final SQLiteDB db = new SQLiteDB(this);
+        db.createDataBase();
         AlertDialog.Builder adb = new AlertDialog.Builder(this);
         final AlertDialog ad = adb.create();
         kcal = (NumberPicker) findViewById(R.id.kcal);

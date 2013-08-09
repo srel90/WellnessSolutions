@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="apk" name="WellnessSolutions">
+    <output-path>$PROJECT_DIR$/out/artifacts/WellnessSolutions</output-path>
+    <properties id="android-properties">
+      <options>
+        <option name="includeSystemProGuardCfgFile" value="true" />
+        <option name="keyStoreUrl" value="file://" />
+        <option name="proGuardCfgFileUrl" value="file://$PROJECT_DIR$/proguard-project.txt" />
+        <option name="signingMode" value="DEBUG" />
+      </options>
+    </properties>
+    <root id="archive" name="WellnessSolutions.apk">
+      <element id="android-final-package" facet="WellnessSolutions/android/Android" />
+    </root>
+  </artifact>
+</component>

@@ -30,6 +30,7 @@ public class menu5_activity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu5_activity);
         final SQLiteDB db = new SQLiteDB(this);
+        db.createDataBase();
         String arrData[][] = null;
         arrData=db.selectAllTransectionData();
         int num = arrData.length;

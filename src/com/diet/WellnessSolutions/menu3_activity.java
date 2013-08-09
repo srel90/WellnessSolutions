@@ -24,7 +24,7 @@ public class menu3_activity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu3_activity);
 
-
+        db.createDataBase();
         arrData=db.selectAllRecipeData();
         final AutoCompleteTextView autoCom = (AutoCompleteTextView)findViewById(R.id.autoCompleteTextView1);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line, arrData);
