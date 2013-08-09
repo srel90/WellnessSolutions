@@ -130,58 +130,7 @@
     <favorites_list name="WellnessSolutions" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="MainMenuActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/diet/WellnessSolutions/MainMenuActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="0" selection-start="5611" selection-end="5611" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="menu3_activity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/diet/WellnessSolutions/menu3_activity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="22" selection-start="708" selection-end="708" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#921#929#0" expanded="true" />
-                <element signature="e#1534#1559#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SQLiteDB.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/diet/WellnessSolutions/SQLiteDB.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="50" selection-start="2743" selection-end="2743" vertical-scroll-proportion="-0.031365313">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="menu4_activity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/diet/WellnessSolutions/menu4_activity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="720" selection-end="720" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="menu5_activity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/diet/WellnessSolutions/menu5_activity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="28" selection-start="945" selection-end="945" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -585,7 +534,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="0" width="1346" height="728" extended-state="1" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943925" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -606,7 +555,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943925" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16588785" sideWeight="0.52288735" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16588785" sideWeight="0.52288735" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922536" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12928349" sideWeight="0.568662" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.67077464" order="2" side_tool="false" content_ui="combo" />
@@ -760,14 +709,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/diet/WellnessSolutions/menu5_activity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="28" selection-start="945" selection-end="945" vertical-scroll-proportion="0.0">
+        <state line="32" column="28" selection-start="945" selection-end="945" vertical-scroll-proportion="0.28413284">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/diet/WellnessSolutions/menu4_activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="720" selection-end="720" vertical-scroll-proportion="0.16605166">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/diet/WellnessSolutions/SQLiteDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="90" selection-start="3053" selection-end="3053" vertical-scroll-proportion="0.2195572">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/diet/WellnessSolutions/menu3_activity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="22" selection-start="708" selection-end="708" vertical-scroll-proportion="0.0">
+        <state line="26" column="22" selection-start="708" selection-end="708" vertical-scroll-proportion="0.2601476">
           <folding>
             <element signature="e#921#929#0" expanded="true" />
             <element signature="e#1534#1559#0" expanded="true" />
@@ -777,24 +742,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/diet/WellnessSolutions/MainMenuActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="0" selection-start="5611" selection-end="5611" vertical-scroll-proportion="0.0">
+        <state line="138" column="0" selection-start="5611" selection-end="5611" vertical-scroll-proportion="0.16605166">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/diet/WellnessSolutions/menu4_activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="720" selection-end="720" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/diet/WellnessSolutions/SQLiteDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="50" selection-start="2743" selection-end="2743" vertical-scroll-proportion="-0.031365313">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
