@@ -75,6 +75,7 @@ public class MainMenuActivity extends TabActivity implements GestureDetector.OnG
                 .setIndicator("About", getResources().getDrawable(R.drawable.star32))
                 .setContent(R.id.tab6);
         tabHost.addTab(spec);
+
         rg = (RadioGroup) findViewById(R.id.radioSex);
         age = (NumberPicker) findViewById(R.id.age);
         height = (NumberPicker) findViewById(R.id.height);

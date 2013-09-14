@@ -3,18 +3,12 @@ package com.diet.WellnessSolutions;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.res.AssetManager;
-import android.content.res.Resources;
 import android.database.Cursor;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import android.widget.Toast;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.util.Date;
 
 /**
@@ -112,7 +106,7 @@ public class SQLiteDB extends SQLiteOpenHelper {
         }
 
     }
-        public String[] selectAllRecipeData() {
+    public String[] selectAllRecipeData() {
             // TODO Auto-generated method stub
 
             try {
@@ -159,6 +153,7 @@ public class SQLiteDB extends SQLiteOpenHelper {
             Cursor cursor = sqLiteDatabase.query(TABLE_RECIPE, new String[] { "*" },
                     "recipe LIKE ?",new String[] { "%"+search+"%" }, null, null, null, null);
 
+
             if(cursor != null)
             {
                 if (cursor.moveToFirst()) {
@@ -192,9 +187,9 @@ public class SQLiteDB extends SQLiteOpenHelper {
         //boolean dbExist = false;
         if (dbExist) {
             // do nothing - database already exist
-            Log.i("databaseex","already have");
+
         } else {
-            Log.i("databaseex","don have");
+
             //this.getReadableDatabase();
             try {
                 copyDataBase();
@@ -230,7 +225,7 @@ public class SQLiteDB extends SQLiteOpenHelper {
 
         // Path to the just created empty db
         String outFileName = "data/data/com.diet.WellnessSolutions/databases/WellnessSolutions";
-
+        new File(outFileName).getParentFile().mkdir();
         // Open the empty db as the output stream
         OutputStream myOutput = new FileOutputStream(outFileName);
 
