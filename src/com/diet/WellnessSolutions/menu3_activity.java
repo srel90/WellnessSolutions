@@ -57,7 +57,9 @@ public class menu3_activity extends Activity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> myAdapter, View myView,int position, long mylng) {
                 String kcal = MyArrList.get(position).get("kcal");
+                String recipe= MyArrList.get(position).get("recipe");
                 getParent().getIntent().putExtra("kcal", kcal);
+                getParent().getIntent().putExtra("recipe", recipe);
                 TabActivity ta = (TabActivity) menu3_activity.this.getParent();
                 ta.getTabHost().setCurrentTab(3);
 

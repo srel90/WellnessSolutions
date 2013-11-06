@@ -9,10 +9,12 @@
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent" android:paddingTop="5dp">
-        <ImageView
+        <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageView" android:src="@drawable/kcal2" android:layout_gravity="center"/>
+                android:id="@+id/textView1" android:layout_gravity="center" android:textAlignment="center"
+                android:gravity="center|center_vertical|center_horizontal" android:textColor="#ffff99"
+                android:textSize="24sp"/>
     </LinearLayout>
     <LinearLayout
             android:orientation="horizontal"
@@ -31,5 +33,19 @@
                 android:layout_height="wrap_content"
                 android:text="บันทึก"
                 android:id="@+id/btnrecord" android:layout_gravity="center"/>
+    </LinearLayout>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2" android:text="รายการอาหารที่รับประทาน ใน 1 เดือน" android:paddingTop="5dp"
+            android:paddingBottom="5dp" android:textSize="24sp" android:textColor="#000000"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/listView"/>
     </LinearLayout>
 </LinearLayout>

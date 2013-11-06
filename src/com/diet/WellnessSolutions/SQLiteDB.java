@@ -34,7 +34,7 @@ public class SQLiteDB extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
     }
-    public long insertTransectionData(double kcal) {
+    public long insertTransectionData(double kcal,String getrecipe) {
         try {
             SQLiteDatabase sqLiteDatabase;
             sqLiteDatabase = this.getWritableDatabase(); // Write Data
@@ -56,7 +56,7 @@ public class SQLiteDB extends SQLiteOpenHelper {
             ContentValues Val = new ContentValues();
             Val.put("kcal", kcal);
             Val.put("datetime", timeMilliseconds);
-
+            Val.put("recipe",getrecipe);
             long rows = sqLiteDatabase.insert(TABLE_TRANSECTION, null, Val);
 
             sqLiteDatabase.close();
@@ -163,6 +163,44 @@ public class SQLiteDB extends SQLiteOpenHelper {
                         arrData[i][0] = cursor.getString(0);
                         arrData[i][1] = cursor.getString(1);
                         arrData[i][2] = cursor.getString(2);
+                        i++;
+                    } while (cursor.moveToNext());
+
+                }
+            }
+            cursor.close();
+
+            return arrData;
+
+        } catch (Exception e) {
+            return null;
+        }
+
+    }
+    public String[][] listTransectionData() {
+        // TODO Auto-generated method stub
+
+        try {
+            String arrData[][] = null;
+
+            SQLiteDatabase sqLiteDatabase;
+            sqLiteDatabase = this.getReadableDatabase(); // Read Data
+
+            //Cursor cursor = sqLiteDatabase.query(TABLE_TRANSECTION, new String[] { "*" },
+            //        null,null, null, null, null, null);
+            String strSQL = "SELECT * FROM transection WHERE (strftime('%d','now')-strftime('%d', datetime / 1000, 'unixepoch'))<=30 ORDER BY ID DESC";
+            Cursor cursor = sqLiteDatabase.rawQuery(strSQL, null);
+
+            if(cursor != null)
+            {
+                if (cursor.moveToFirst()) {
+                    arrData = new String[cursor.getCount()][cursor.getColumnCount()];
+                    int i= 0;
+                    do {
+                        arrData[i][0] = cursor.getString(0);
+                        arrData[i][1] = cursor.getString(1);
+                        arrData[i][2] = cursor.getString(2);
+                        arrData[i][3] = cursor.getString(3);
                         i++;
                     } while (cursor.moveToNext());
 

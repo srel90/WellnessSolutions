@@ -5,9 +5,10 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.NumberPicker;
-import android.widget.Toast;
+import android.widget.*;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created with IntelliJ IDEA.
@@ -30,15 +31,44 @@ public class menu4_activity extends Activity {
         kcal.setMaxValue(9999);
         kcal.setMinValue(0);
         int getkcal=0;
+        String getrecipy="";
         if(getParent().getIntent().getStringExtra("kcal")!=null) {
             getkcal=Integer.valueOf(getParent().getIntent().getStringExtra("kcal"));
         }
+        if(getParent().getIntent().getStringExtra("recipe")!=null) {
+            getrecipy= getParent().getIntent().getStringExtra("recipe");
+        }
         kcal.setValue(getkcal);
-        //Toast.makeText(menu4_activity.this,getParent().getIntent().getStringExtra("kcal"), Toast.LENGTH_SHORT).show();
+        final TextView t1 = (TextView) findViewById(R.id.textView1);
+        t1.setText(getrecipy);
+        //Toast.makeText(menu4_activity.this,getrecipy, Toast.LENGTH_SHORT).show();
+
+        final ListView listView = (ListView)findViewById(R.id.listView);
+        String arrData[][] = null;
+        arrData=db.listTransectionData();
+        final ArrayList<HashMap<String, String>> MyArrList = new ArrayList<HashMap<String, String>>();
+        HashMap<String, String> map;
+        if(arrData!=null){
+        for(int i = 0; i < arrData.length; i++){
+            map = new HashMap<String, String>();
+            map.put("ID",String.valueOf(i + 1));
+            map.put("kcal",arrData[i][2].toString());
+            map.put("datetime",arrData[i][0].toString());
+            map.put("recipe",arrData[i][3].toString());
+            MyArrList.add(map);
+        }
+
+        SimpleAdapter sAdap;
+        sAdap = new SimpleAdapter(menu4_activity.this, MyArrList, R.layout.recipe_list_activity,
+                new String[] {"ID","recipe"}, new int[] {R.id.ColOrder,R.id.ColName});
+        listView.setAdapter(sAdap);
+        }
+
+
         findViewById(R.id.btnrecord).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                long insertStatus=db.insertTransectionData(kcal.getValue());
+                long insertStatus=db.insertTransectionData(kcal.getValue(), (String) t1.getText());
                 if(insertStatus <=  0){
                     ad.setMessage("Error!! ");
                     ad.show();
