@@ -6,31 +6,20 @@
                 android:orientation="vertical">
 
     <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent" android:paddingTop="5dp">
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView1" android:layout_gravity="center" android:textAlignment="center"
-                android:gravity="center|center_vertical|center_horizontal" android:textColor="#ffff99"
-                android:textSize="24sp"/>
-    </LinearLayout>
-    <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:layout_gravity="center">
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Kilocalorie"
-                android:id="@+id/textView" android:textSize="24sp" android:textColor="#ffff99"
-                android:layout_gravity="center"/>
-        <NumberPicker android:layout_width="100dp" android:layout_height="wrap_content" android:id="@+id/kcal"
+                android:id="@+id/textView1" android:layout_gravity="center" android:textAlignment="center"
+                android:gravity="center|center_vertical|center_horizontal" android:textColor="#ffff99"
+                android:textSize="24sp"/>
+        <NumberPicker android:layout_width="100dp" android:layout_height="wrap_content" android:id="@+id/kcal"  android:scaleX="0.5" android:scaleY="0.5"
                       android:layout_gravity="center"/>
         <Button
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="51dp"
                 android:text="บันทึก"
                 android:id="@+id/btnrecord" android:layout_gravity="center"/>
     </LinearLayout>
